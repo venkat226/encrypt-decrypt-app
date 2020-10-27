@@ -24,14 +24,16 @@ TOTAL                                                                           
 ## Build container image and start docker container
 ```bash
 # build docker image
-$ docker build -t asksh245/encrpt-decrypt-app .
+$ docker build -t aksh245/encrpt-decrypt-app .
 
 # check app docker image
 $ docker images
 
 # start app from docker image
-$ docker run --name test-app -p 5000:5000 asksh245/encrpt-decrypt-app
+$ docker run --name test-app -p 5000:5000 aksh245/encrpt-decrypt-app
 ```
+
+
 
 ## Rest calls
 ### Health Check /api/health
@@ -83,4 +85,10 @@ output
   "output": "My String to encrypt",
   "status": "success"
 }
+```
+## Helm Deployment
+```bash
+$ cd helm-deployment/encrypt-decrypt-app/
+$ helm lint .
+$ helm upgrade --install encrypt-decrypt-app .
 ```
